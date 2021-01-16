@@ -49,9 +49,7 @@ var questions = [
     }
 ]
 
-    /
-    //GIVEN I am taking a code quiz, WHEN I click the start button
-
+//GIVEN I am taking a code quiz, WHEN I click the start button
 
 startButton.addEventListener("click", function () {
 
@@ -71,6 +69,7 @@ startButton.addEventListener("click", function () {
     render(questionIndex);
 })
 
+// and renders questions and choices to page
 function render(questionIndex) {
     questionsDiv.innerHTML = "";
     unorderedList.innerHTML = "";
@@ -83,17 +82,47 @@ function render(questionIndex) {
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
-        questionsDiv.appendChild(ulCreate);
-        ulCreate.appendChild(listItem);
+        questionsDiv.appendChild(unorderedList);
+        unorderedList.appendChild(listItem);
         listItem.addEventListener("click", (compare));
     })
 }
 
-    //     listItem.addEventListener("click", (compare));
+// Event to compare choices with answer
+function compare(event) {
+    var element = event.target;
+
+    if (element.matches("li")) {
+
+        var createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+        // Correct condition 
+        if (element.textContent == questions[questionIndex].answer) {
+            score++;
+            createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
+            // Correct condition 
+        } else {
+            // Will deduct -5 seconds off secondsLeft for wrong answers
+            secondsLeft = secondsLeft - penalty;
+            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
+        }
+
+    }
+    // Question Index determines number question user is on
+    questionIndex++;
+
+    if (questionIndex >= questions.length) {
+        // All done will append last page with user stats
+        allDone();
+        createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+    } else {
+        render(questionIndex);
+    }
+    questionsDiv.appendChild(createDiv);
+}
 
 
-
-    //function that renders questions and choices to page
+   
     // THEN a timer starts and I am presented with a question
     // WHEN I answer a question
     // THEN I am presented with another question

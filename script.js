@@ -21,11 +21,6 @@ var questions = [
         answer: "alerts"
     },
     {
-        title: "Inside which HTML element do we put the JavaScript?",
-        choices: ["<javascript>", "<scriptor>", "<js>", "<script>"],
-        answer: "<js>"
-    },
-    {
         title: "Where is the correct place to insert JavaScript?",
         choices: ["the <head>", "the bottom of the <body>", "anywhere in the HTML", "anywhere in the stylesheet"],
         answer: "the bottom of the <body>"

@@ -1,4 +1,85 @@
-/*test to check if stylesheet is working
-/* body {
-    background-color: aquamarine;
-} */
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#highScore1{
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: black;
+    font-style: normal;
+}
+
+#timer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 10px;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    /* padding-left: 100px; */
+    height: auto;
+    width: auto;
+}
+
+
+
+#unorderedList {
+    list-style-type: none;
+    position: relative;
+    text-align: center;
+    padding-left: 100px;
+    width: 200px;
+}
+
+li {
+background-color: lavender;
+border-style: groove;
+border-color: purple;
+border-width: 2px;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-bottom: 7px;
+
+}
+
+#startButton{
+    height: 50px;
+    width: 150px;
+    margin-top: 40px;
+    background-color: rgb(180, 102, 180);
+    border-color: rgb(204, 171, 204);
+    border-width: 3px;
+    border-radius: 12px;
+}
+
+#createH1 {
+    font-size: 50px;
+    color: rgb(39, 156, 90);
+    background: -webkit-linear-gradient(rgb(173, 45, 199), rgb(132, 240, 69));
+    /* used the resource https://css-tricks.com/snippets/css/gradient-text/ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#initials{
+    height: 35px;
+    width: 75px
+}
+
+button {
+    margin-left: 10px;
+    height: 35px;
+    width: 75px
+    border-style: groove;
+    border-color: purple;
+    background-color: lavender;
+    border-radius: 10px
+}
+
+#createDiv {
+    margin-top: 40px; 
+}

@@ -85,6 +85,7 @@ function render(questionIndex) {
         unorderedList.appendChild(listItem);
         listItem.addEventListener("click", (compare));
     })
+    startButton.style.visibility = "hidden";
 }
 
 // compare choices with answer
@@ -123,7 +124,6 @@ function compare(event) {
 // All done function will append last page
 function allDone() {
     questionsDiv.innerHTML = "";
-    timer.innerHTML = "";
     startButton.style.visibility = "hidden";
 
     // Heading:

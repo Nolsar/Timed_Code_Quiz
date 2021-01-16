@@ -9,6 +9,7 @@ var score = 0;
 var questionsDiv = document.querySelector("#questionsDiv");
 var questionIndex = 0;
 var unorderedList = document.querySelector("#unorderedList");
+var highScore = docume
 
 //Quiz questions
 var questions = [

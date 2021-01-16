@@ -4,23 +4,25 @@ body {
 
 #highScore1{
     position: absolute;
+    top: 20px;
     left: 0;
-    top: 0;
+    padding-left: 40px;
     color: black;
     font-style: normal;
 }
 
 #timer {
+    border-style: inset;
     position: absolute;
-    top: 0;
+    top: 20px;
     right: 0;
-    padding-right: 10px;
+    padding: 15px;
+    margin-right: 40px;
 }
 
 .container {
     text-align: center;
-    padding: 40px;
-    /* padding-left: 100px; */
+    padding: 40px 90px 40px 90px;
     height: auto;
     width: auto;
 }
@@ -59,8 +61,8 @@ margin-bottom: 7px;
 #createH1 {
     font-size: 50px;
     color: rgb(39, 156, 90);
-    background: -webkit-linear-gradient(rgb(173, 45, 199), rgb(132, 240, 69));
     /* used the resource https://css-tricks.com/snippets/css/gradient-text/ */
+    background: -webkit-linear-gradient(rgb(173, 45, 199), rgb(132, 240, 69));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -71,13 +73,14 @@ margin-bottom: 7px;
 }
 
 button {
+    font-size: 120%;
     margin-left: 10px;
     height: 35px;
     width: 75px
-    border-style: groove;
-    border-color: purple;
-    background-color: lavender;
-    border-radius: 10px
+    background-color: rgb(180, 102, 180);
+    border-color: rgb(204, 171, 204);
+    border-width: 3px;
+    border-radius: 12px;
 }
 
 #createDiv {

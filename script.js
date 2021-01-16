@@ -9,7 +9,9 @@ var score = 0;
 var questionsDiv = document.querySelector("#questionsDiv");
 var questionIndex = 0;
 var unorderedList = document.querySelector("#unorderedList");
-var highScore = docume
+var highScore = document.querySelector("#highScore");
+var clear = document.querySelector("#clear");
+var goBack = document.querySelector("#goBack");
 
 //Quiz questions
 var questions = [
@@ -102,7 +104,7 @@ function compare(event) {
         if (element.textContent == questions[questionIndex].answer) {
             score++;
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
-         // WHEN I answer a question incorrectly
+            // WHEN I answer a question incorrectly
         } else {
             // Will deduct 10 seconds off secondsLeft
             secondsLeft = secondsLeft - penalty;
@@ -128,25 +130,25 @@ function allDone() {
     questionsDiv.innerHTML = "";
     timer.innerHTML = "";
 
-        // Heading:
-        var createH1 = document.createElement("h1");
-        createH1.setAttribute("id", "createH1");
-        createH1.textContent = "All Done!"
-        questionsDiv.appendChild(createH1);
-    
-        // Paragraph
-        var createP = document.createElement("p");
-        createP.setAttribute("id", "createP");
-        questionsDiv.appendChild(createP);
-    
-        // WHEN all questions are answered or the timer reaches 0
-        if (secondsLeft >= 0) {
-            var timeRemaining = secondsLeft;
-            var createP2 = document.createElement("p");
-            clearInterval(timeInterval);
-            createP.textContent = "Your final score is: " + timeRemaining;
-            questionsDiv.appendChild(createP2);
-        }
+    // Heading:
+    var createH1 = document.createElement("h1");
+    createH1.setAttribute("id", "createH1");
+    createH1.textContent = "All Done!"
+    questionsDiv.appendChild(createH1);
+
+    // Paragraph
+    var createP = document.createElement("p");
+    createP.setAttribute("id", "createP");
+    questionsDiv.appendChild(createP);
+
+    // WHEN all questions are answered or the timer reaches 0
+    if (secondsLeft >= 0) {
+        var timeRemaining = secondsLeft;
+        var createP2 = document.createElement("p");
+        clearInterval(timeInterval);
+        createP.textContent = "Your final score is: " + timeRemaining;
+        questionsDiv.appendChild(createP2);
+    }
 
     // THEN I can save my initials and score
     var createLabel = document.createElement("label");
@@ -199,6 +201,31 @@ function allDone() {
         }
     });
 }
-   
 
-    
+// Event listener to clear scores 
+clear.addEventListener("click", function () {
+    localStorage.clear();
+    location.reload();
+});
+
+// Retreives local stroage 
+var allScores = localStorage.getItem("allScores");
+allScores = JSON.parse(allScores);
+
+if (allScores !== null) {
+
+    for (var i = 0; i < allScores.length; i++) {
+
+        var createLi = document.createElement("li");
+        createLi.textContent = allScores[i].initials + " " + allScores[i].score;
+        highScore.appendChild(createLi);
+
+    }
+}
+// Event listener to move to index.html
+goBack.addEventListener("click", function () {
+    window.location.replace("./index.html");
+});
+
+
+

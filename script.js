@@ -125,7 +125,7 @@ function compare(event) {
 // All done function will append last page
 function allDone() {
     questionsDiv.innerHTML = "";
-    currentTime.innerHTML = "";
+    timer.innerHTML = "";
 
         // Heading:
         var createH1 = document.createElement("h1");
@@ -138,7 +138,7 @@ function allDone() {
         createP.setAttribute("id", "createP");
         questionsDiv.appendChild(createP);
     
-        // Calculates time remaining and replaces it with score
+        // WHEN all questions are answered or the timer reaches 0
         if (secondsLeft >= 0) {
             var timeRemaining = secondsLeft;
             var createP2 = document.createElement("p");
@@ -146,14 +146,30 @@ function allDone() {
             createP.textContent = "Your final score is: " + timeRemaining;
             questionsDiv.appendChild(createP2);
         }
+
+    // THEN I can save my initials and score
+    var createLabel = document.createElement("label");
+    createLabel.setAttribute("id", "createLabel");
+    createLabel.textContent = "Enter your initials: ";
+
+    questionsDiv.appendChild(createLabel);
+
+    // input
+    var createInput = document.createElement("input");
+    createInput.setAttribute("type", "text");
+    createInput.setAttribute("id", "initials");
+    createInput.textContent = "";
+
+    questionsDiv.appendChild(createInput);
+
+    // submit
+    var createSubmit = document.createElement("button");
+    createSubmit.setAttribute("type", "submit");
+    createSubmit.setAttribute("id", "Submit");
+    createSubmit.textContent = "Submit";
+
+    questionsDiv.appendChild(createSubmit);
 }
    
-    // THEN a timer starts and I am presented with a question
-    // WHEN I answer a question
+
     
-    //
-    // THEN time is subtracted from the clock
-    // WHEN all questions are answered or the timer reaches 0
-    // THEN the game is over
-    // WHEN the game is over
-    // THEN I can save my initials and score

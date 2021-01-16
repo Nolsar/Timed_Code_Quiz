@@ -129,11 +129,12 @@ function compare(event) {
 function allDone() {
     questionsDiv.innerHTML = "";
     timer.innerHTML = "";
+    startButton.style.visibility = "hidden";
 
     // Heading:
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
-    createH1.textContent = "All Done!"
+    createH1.textContent = "Finish!"
     questionsDiv.appendChild(createH1);
 
     // Paragraph

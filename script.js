@@ -73,12 +73,13 @@ startButton.addEventListener("click", function () {
 function render(questionIndex) {
     questionsDiv.innerHTML = "";
     unorderedList.innerHTML = "";
+    // THEN I am presented with another question
     for (var i = 0; i < questions.length; i++) {
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choices;
         questionsDiv.textContent = userQuestion;
     }
-    // New for each for question choices
+    // New choices for each question
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
@@ -88,7 +89,7 @@ function render(questionIndex) {
     })
 }
 
-// Event to compare choices with answer
+// compare choices with answer
 function compare(event) {
     var element = event.target;
 
@@ -100,9 +101,9 @@ function compare(event) {
         if (element.textContent == questions[questionIndex].answer) {
             score++;
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
-            // Correct condition 
+         // WHEN I answer a question incorrectly
         } else {
-            // Will deduct -5 seconds off secondsLeft for wrong answers
+            // Will deduct 10 seconds off secondsLeft
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
         }
@@ -121,12 +122,36 @@ function compare(event) {
     questionsDiv.appendChild(createDiv);
 }
 
+// All done function will append last page
+function allDone() {
+    questionsDiv.innerHTML = "";
+    currentTime.innerHTML = "";
 
+        // Heading:
+        var createH1 = document.createElement("h1");
+        createH1.setAttribute("id", "createH1");
+        createH1.textContent = "All Done!"
+        questionsDiv.appendChild(createH1);
+    
+        // Paragraph
+        var createP = document.createElement("p");
+        createP.setAttribute("id", "createP");
+        questionsDiv.appendChild(createP);
+    
+        // Calculates time remaining and replaces it with score
+        if (secondsLeft >= 0) {
+            var timeRemaining = secondsLeft;
+            var createP2 = document.createElement("p");
+            clearInterval(timeInterval);
+            createP.textContent = "Your final score is: " + timeRemaining;
+            questionsDiv.appendChild(createP2);
+        }
+}
    
     // THEN a timer starts and I am presented with a question
     // WHEN I answer a question
-    // THEN I am presented with another question
-    // WHEN I answer a question incorrectly
+    
+    //
     // THEN time is subtracted from the clock
     // WHEN all questions are answered or the timer reaches 0
     // THEN the game is over

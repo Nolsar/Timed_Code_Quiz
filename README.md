@@ -1,11 +1,13 @@
 # Timed_Code_Quiz
 # 04 Web APIs: Code Quiz
 
-## Your Task
+Coding Quiz challenge!
+ 
+ The quiz contains 5 questions on Javascript Fundamentals. When a student clicks the start button, a question is presented. The Student has 75 seconds to complete the entire quiz. For each incorrect answer, it will cost the student 10 seconds off their time remianing. 
 
-As you proceed in your journey to becoming a full-stack web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+ After finsihing the quiz, they will be presented with their score and be able to save it to the page with their incials. The student can at any point access the Highscores table throguh the link at the top left of the page so they can view their progress against their peers.
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s homework invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework will teach you all the skills you need to succeed in this assignment.
+ This webpage contains HTML, CSS styling, and Javascript. The intention of this webpage is to create a fun way to study and challenge yourself against your peers.   
 
 
 ## User Story
@@ -17,27 +19,11 @@ SO THAT I can gauge my progress compared to my peers
 ```
 
 
-## Acceptance Criteria
-
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-```
-
-
 ### live URL:
  https://nolsar.github.io/Timed_Code_Quiz/
 
 ### GitHub URL:
-https://github.com/Nolsar/Timed_Code_Quiz
+https://github.com/Nolsar/Timed_Code_Quiz/
+
 
 

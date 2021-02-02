@@ -169,7 +169,14 @@ function allDone() {
     questionsDiv.appendChild(createSubmit);
 
     // Captures initials 
-    createSubmit.addEventListener("click", function () {
+    createSubmit.addEventListener("click", function (event) {
+        // event.preventDefault();
+        // var highScoreText = new Object();
+        // highScoreText.name = inputTag.value.trim();
+        // highScoreText.newScore = score;
+        // storeScores(highScoreText);
+        // window.location.href = "highScores.html"
+
         var initials = createInput.value;
 
         if (initials === null) {
@@ -193,7 +200,9 @@ function allDone() {
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
             // Travels to final page
-            window.location.replace("./highScores.html");
+            window.location.href = "highScores.html"
+            
+           
         }
     });
 }

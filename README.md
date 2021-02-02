@@ -9,6 +9,11 @@ Coding Quiz challenge!
 
  This webpage contains HTML, CSS styling, and Javascript. The intention of this webpage is to create a fun way to study and challenge yourself against your peers.   
 
+![](assets\code_quiz_challenge.jpg) 
+![](assets\Question_example.jpg)
+![](assets\Finish.jpg)
+![](assets\HighScores.jpg)
+
 
 ## User Story
 
